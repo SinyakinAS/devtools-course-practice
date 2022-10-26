@@ -80,8 +80,7 @@ std::string CLPApplication::operator()(int argc, const char** argv) {
 }
 
 std::string CLPApplication::help() {
-  std::string help =
-      "This program considers the integral";
+  std::string help = "This program considers the integral";
   return help;
 }
 
