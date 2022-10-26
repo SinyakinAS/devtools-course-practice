@@ -33,7 +33,7 @@ std::string CLPApplication::operator()(int argc, const char** argv) {
 
     const char* answer = output;
 
-    if (*answer == *input) os << "true";
+    if (*answer == *input) os << "1";
     std::cout << os.str() << std::endl;
     return "success";
   }
@@ -46,7 +46,7 @@ std::string CLPApplication::operator()(int argc, const char** argv) {
 
     const char* answer = output;
 
-    if (*answer == *input) os << "true";
+    if (*answer == *input) os << "1";
     std::cout << os.str() << std::endl;
     return "success";
   }
@@ -59,7 +59,7 @@ std::string CLPApplication::operator()(int argc, const char** argv) {
 
     const char* answer = output;
 
-    if (*answer == *input) os << "true";
+    if (*answer == *input) os << "1";
     std::cout << os.str() << std::endl;
     return "success";
   }
@@ -72,7 +72,7 @@ std::string CLPApplication::operator()(int argc, const char** argv) {
 
     const char* answer = output;
 
-    if (*answer == *input) os << "true";
+    if (*answer == *input) os << "2";
     std::cout << os.str() << std::endl;
     return "success";
   }
