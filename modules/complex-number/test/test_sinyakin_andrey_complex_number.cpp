@@ -15,7 +15,7 @@ TEST(Sinyakin_Andrey_ComplexNumberTest, create_complex_number_correct) {
   ASSERT_EQ(im, z.getIm());
 }
 
-TEST(Sinyakin_Andrey_ComplexNumberTest, comprarasing_correct) {
+TEST(Sinyakin_Andrey_ComplexNumberTest, comparing_correct) {
   double re1 = 3.0;
   double im1 = 0.2;
 
