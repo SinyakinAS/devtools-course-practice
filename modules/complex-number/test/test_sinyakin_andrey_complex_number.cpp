@@ -1,5 +1,4 @@
-﻿  // Copyright 2022 Sinyakin Andrey
-
+﻿// Copyright 2022 Sinyakin Andrey
 
 #include <gtest/gtest.h>
 
@@ -125,12 +124,19 @@ TEST(Sinyakin_Andrey_ComplexNumberTest, comparasing2_correct) {
 }
 
 TEST(Sinyakin_Andrey_ComplexNumberTest, division_correct) {
-  ComplexNumber z1(1, 1);
-  ComplexNumber z2(1, 1);
+  double r1 = 2.2, i1 = 2.2, r2 = 2.0, i2 = 1.0;
 
-  ComplexNumber z3 = z1 / z2;
+  ComplexNumber a(r1, i1);
+  ComplexNumber b(r2, i2);
 
-  ASSERT_EQ(z3.getRe(), 1);
+  ComplexNumber div = a / b;
+
+  double n1 = r1 * r2 + i1 * i2;
+  double n2 = i1 * r2 - r1 * i2;
+  double d = 1.0 / (r2 * r2 + i2 * i2);
+
+  ASSERT_DOUBLE_EQ(n1 * d, div.getRe());
+  ASSERT_DOUBLE_EQ(n2 * d, div.getIm());
 }
 
 TEST(Sinyakin_Andrey_ComplexNumberTest, division_with_zero) {
@@ -141,5 +147,3 @@ TEST(Sinyakin_Andrey_ComplexNumberTest, division_with_zero) {
   ComplexNumber z2;
   ASSERT_ANY_THROW(z1 / z2);
 }
-
-
