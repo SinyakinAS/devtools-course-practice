@@ -1,4 +1,5 @@
-﻿// Copyright 2022 Sinyakin Andrey
+﻿
+// Copyright 2022 Sinyakin Andrey
 
 #include <gtest/gtest.h>
 
