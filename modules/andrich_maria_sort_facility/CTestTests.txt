@@ -22,7 +22,7 @@ set_tests_properties (${prefix}_get_help PROPERTIES
 
 add_test(
     NAME ${prefix}_test1
-    COMMAND ${APPLICATION} -t1 1 1 2 
+    COMMAND ${APPLICATION} -t1 q 
 )
 set_tests_properties (${prefix}_test1 PROPERTIES
     PASS_REGULAR_EXPRESSION "1\nsuccess"
@@ -30,7 +30,7 @@ set_tests_properties (${prefix}_test1 PROPERTIES
 
 add_test(
     NAME ${prefix}_test2
-    COMMAND ${APPLICATION} -t2 1 1 2
+    COMMAND ${APPLICATION} -t2 a
 )
 set_tests_properties (${prefix}_test2 PROPERTIES
     PASS_REGULAR_EXPRESSION "1\nsuccess"
@@ -38,7 +38,7 @@ set_tests_properties (${prefix}_test2 PROPERTIES
 
 add_test(
     NAME ${prefix}_test3
-    COMMAND ${APPLICATION} -t3 1 1 2
+    COMMAND ${APPLICATION} -t3 b
 )
 set_tests_properties (${prefix}_test3 PROPERTIES
     PASS_REGULAR_EXPRESSION "1\nsuccess"
@@ -46,7 +46,7 @@ set_tests_properties (${prefix}_test3 PROPERTIES
 
 add_test(
     NAME ${prefix}_test4
-    COMMAND ${APPLICATION} -t4 1 1 2
+    COMMAND ${APPLICATION} -t4 c
 )
 set_tests_properties (${prefix}_test4 PROPERTIES
     PASS_REGULAR_EXPRESSION "2\nsuccess"
