@@ -78,6 +78,7 @@ double SimpsonCalc::solve() {
   for (int i = 0; i < counter; ++i) {
     std::vector<std::vector<double>> params(dim);
     int temp = i;
+    params.reserve(dim * 6);
     for (int j = 0; j < dim; ++j) {
       params[j].push_back(limits[j].first + temp % n[j] * h[j]);
       params[j].push_back(limits[j].first + temp % n[j] * h[j] + h[j] / 2);
