@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <cmath>
 #include <functional>
+#include <iostream>
 #include <utility>
 #include <vector>
 
@@ -92,12 +93,17 @@ double SimpsonCalc::solve() {
       temp /= n[j];
     }
     std::vector<double> point;
-    for (int i = 0; i < static_cast<int>(params.size()); ++i) {
+    int six_pow = pow(6, dim);
+    for (int i = 0; i < six_pow; ++i) {
       int temp = i;
       for (int j = 0; j < dim; ++j) {
+        auto x = temp % 6;
+        // std::cout << "dim: " << dim << " j: " << j << " x: " << x <<
+        // std::endl;
         point.push_back(params[j][temp % 6]);
         temp /= 6;
       }
+      // std::cout << std::endl;
       result += f(point);
       point.clear();
     }
