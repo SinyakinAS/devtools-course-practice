@@ -86,24 +86,25 @@ double SimpsonCalc::solve() {
       auto z = x + h[j];
       params[j].push_back(x);
       params[j].push_back(y);
-      params[j].push_back(y);
-      params[j].push_back(y);
-      params[j].push_back(y);
+      // params[j].push_back(y);
+      // params[j].push_back(y);
+      // params[j].push_back(y);
       params[j].push_back(z);
       temp /= n[j];
     }
+
     std::vector<double> point;
     int six_pow = pow(6, dim);
     for (int i = 0; i < six_pow; ++i) {
       int temp = i;
       for (int j = 0; j < dim; ++j) {
         auto x = temp % 6;
-        // std::cout << "dim: " << dim << " j: " << j << " x: " << x <<
-        // std::endl;
-        point.push_back(params[j][temp % 6]);
+        if (x > 0 && x < 5) x = 1;
+        if (x == 5) x = 2;
+        point.push_back(params[j][x]);
         temp /= 6;
       }
-      // std::cout << std::endl;
+
       result += f(point);
       point.clear();
     }
