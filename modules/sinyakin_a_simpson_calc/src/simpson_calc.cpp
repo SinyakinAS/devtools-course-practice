@@ -18,10 +18,10 @@ SimpsonCalc::SimpsonCalc() {
   n = {1};
 }
 
-SimpsonCalc::SimpsonCalc(const int dim,
-                         const function<double(vector<double>)> f,
-                         const vector<pair<double, double>> limits,
-                         const vector<int> n) {
+SimpsonCalc::SimpsonCalc(const int& dim,
+                         const function<double(vector<double>)>& f,
+                         const vector<pair<double, double>>& limits,
+                         const vector<int>& n) {
   this->dim = dim;
   this->f = f;
   this->limits = limits;
@@ -55,17 +55,17 @@ vector<int> SimpsonCalc::getN() const { return this->n; }
 
 int SimpsonCalc::getD() const { return this->dim; }
 
-void SimpsonCalc::setFunc(const function<double(vector<double>)> f) {
+void SimpsonCalc::setFunc(const function<double(vector<double>)>& f) {
   this->f = f;
 }
 
-void SimpsonCalc::setL(const vector<pair<double, double>> limits) {
+void SimpsonCalc::setL(const vector<pair<double, double>>& limits) {
   this->limits = limits;
 }
 
-void SimpsonCalc::setN(vector<int> n) { this->n = n; }
+void SimpsonCalc::setN(const vector<int>& n) { this->n = n; }
 
-void SimpsonCalc::setD(int dim) { this->dim = dim; }
+void SimpsonCalc::setD(const int& dim) { this->dim = dim; }
 
 double SimpsonCalc::solve() {
   std::vector<double> h(dim);
