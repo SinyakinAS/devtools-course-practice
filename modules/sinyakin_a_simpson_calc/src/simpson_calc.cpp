@@ -92,7 +92,7 @@ double SimpsonCalc::solve() {
       temp /= n[j];
     }
     std::vector<double> point;
-    for (int i = 0; i < params.size(); ++i) {
+    for (int i = 0; i < static_cast<int>(params.size()); ++i) {
       int temp = i;
       for (int j = 0; j < dim; ++j) {
         point.push_back(params[j][temp % 6]);
