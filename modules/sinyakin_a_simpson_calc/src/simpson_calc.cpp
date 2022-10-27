@@ -80,12 +80,15 @@ double SimpsonCalc::solve() {
     int temp = i;
     params.reserve(dim * 6);
     for (int j = 0; j < dim; ++j) {
-      params[j].push_back(limits[j].first + temp % n[j] * h[j]);
-      params[j].push_back(limits[j].first + temp % n[j] * h[j] + h[j] / 2);
-      params[j].push_back(limits[j].first + temp % n[j] * h[j] + h[j] / 2);
-      params[j].push_back(limits[j].first + temp % n[j] * h[j] + h[j] / 2);
-      params[j].push_back(limits[j].first + temp % n[j] * h[j] + h[j] / 2);
-      params[j].push_back(limits[j].first + temp % n[j] * h[j] + h[j]);
+      auto x = limits[j].first + temp % n[j] * h[j];
+      auto y = x + h[j] / 2;
+      auto z = x + h[j];
+      params[j].push_back(x);
+      params[j].push_back(y);
+      params[j].push_back(y);
+      params[j].push_back(y);
+      params[j].push_back(y);
+      params[j].push_back(z);
       temp /= n[j];
     }
     std::vector<double> point;
